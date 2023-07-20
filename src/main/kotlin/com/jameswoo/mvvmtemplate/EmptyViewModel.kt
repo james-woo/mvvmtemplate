@@ -22,6 +22,18 @@ class ${modelName}ViewModel(
     private val _viewState = MutableStateFlow<${modelName}ViewState>(${modelName}ViewState.Empty)
     val viewState: StateFlow<${modelName}ViewState> = _viewState
     
+    fun handleViewAction(viewAction: ${modelName}ViewAction) {
+        TODO()
+    }
+    
+    private inline fun <reified T : ${modelName}ViewState> updateViewState(block: (T) -> T) {
+        (_viewState.value as? T)?.let {
+            _viewState.update {
+                block(it as T)
+            }
+        }
+    }
+    
     class Factory(
         private val application: Application,
     ): ViewModelProvider.Factory {
