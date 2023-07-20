@@ -25,8 +25,8 @@ val mvvmTemplate
         // UI context in which the template should be displayed.
         screens = listOf(WizardUiContext.ActivityGallery)
 
-        val screenName = stringParameter {
-            name = "Screen name"
+        val modelName = stringParameter {
+            name = "Model name"
             default = "Main"
         }
 
@@ -34,7 +34,7 @@ val mvvmTemplate
 
         // Collection of widgets to render in NewProjectExtraDetail
         widgets(
-            TextFieldWidget(screenName),
+            TextFieldWidget(modelName),
             PackageNameWidget(packageName)
         )
 
@@ -46,7 +46,7 @@ val mvvmTemplate
             mvvmRecipe(
                 moduleData = data as ModuleTemplateData,
                 packageName = packageName.value,
-                screenName = screenName.value,
+                modelName = modelName.value,
             )
         }
     }

@@ -3,8 +3,8 @@ package com.jameswoo.mvvmtemplate
 import com.android.tools.idea.wizard.template.escapeKotlinIdentifier
 
 fun emptyActivity(
-    packageName: String,
-    screenName: String
+        packageName: String,
+        modelName: String
 ) = """
 package ${escapeKotlinIdentifier(packageName)}
 
@@ -20,10 +20,10 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 
-class ${screenName}Activity : ComponentActivity() {
+class ${modelName}Activity : ComponentActivity() {
 
-    private val viewModel by viewModels<${screenName}ViewModel> {
-        ${screenName}ViewModel.Factory(
+    private val viewModel by viewModels<${modelName}ViewModel> {
+        ${modelName}ViewModel.Factory(
             application = this.application,
         )
     }
