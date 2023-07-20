@@ -5,24 +5,24 @@ import com.android.tools.idea.wizard.template.PackageName
 import com.android.tools.idea.wizard.template.RecipeExecutor
 
 fun RecipeExecutor.mvvmRecipe(
-    moduleData: ModuleTemplateData,
-    packageName: PackageName,
-    screenName: String,
+        moduleData: ModuleTemplateData,
+        packageName: PackageName,
+        modelName: String,
 ) {
-    val emptyActivity = emptyActivity(packageName, screenName)
-    val emptyActivityPath = moduleData.srcDir.resolve("${screenName}Activity.kt")
+    val emptyActivity = emptyActivity(packageName, modelName)
+    val emptyActivityPath = moduleData.srcDir.resolve("${modelName}Activity.kt")
     save(emptyActivity, emptyActivityPath)
 
-    val emptyViewModel = emptyViewModel(packageName, screenName)
-    val emptyViewModelPath = moduleData.srcDir.resolve("${screenName}ViewModel.kt")
+    val emptyViewModel = emptyViewModel(packageName, modelName)
+    val emptyViewModelPath = moduleData.srcDir.resolve("${modelName}ViewModel.kt")
     save(emptyViewModel, emptyViewModelPath)
 
-    val emptyViewState = emptyViewState(packageName, screenName)
-    val emptyViewStatePath = moduleData.srcDir.resolve("${screenName}ViewState.kt")
+    val emptyViewState = emptyViewState(packageName, modelName)
+    val emptyViewStatePath = moduleData.srcDir.resolve("${modelName}ViewState.kt")
     save(emptyViewState, emptyViewStatePath)
 
-    val emptyViewAction = emptyViewAction(packageName, screenName)
-    val emptyViewActionPath = moduleData.srcDir.resolve("${screenName}ViewAction.kt")
+    val emptyViewAction = emptyViewAction(packageName, modelName)
+    val emptyViewActionPath = moduleData.srcDir.resolve("${modelName}ViewAction.kt")
     save(emptyViewAction, emptyViewActionPath)
 
     open(emptyActivityPath)
