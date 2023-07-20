@@ -17,6 +17,10 @@ fun RecipeExecutor.mvvmRecipe(
     val emptyViewModelPath = moduleData.srcDir.resolve("${modelName}ViewModel.kt")
     save(emptyViewModel, emptyViewModelPath)
 
+    val emptyModel = emptyModel(packageName, modelName)
+    val emptyModelPath = moduleData.srcDir.resolve("${modelName}.kt")
+    save(emptyModel, emptyModelPath)
+
     val emptyViewState = emptyViewState(packageName, modelName)
     val emptyViewStatePath = moduleData.srcDir.resolve("${modelName}ViewState.kt")
     save(emptyViewState, emptyViewStatePath)
