@@ -16,6 +16,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 
 class ${screenName}Activity : ComponentActivity() {
 
@@ -28,11 +31,20 @@ class ${screenName}Activity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
+            val viewState by viewModel.viewState.collectAsState()
+
             Surface(
                 modifier = Modifier.fillMaxSize(),
                 color = MaterialTheme.colorScheme.background,
             ) {
-                Text("Hello, World!")
+                when (val currentViewState = viewState) {
+                    is TestViewState.Data -> {
+                        Text("Hello, Data!")
+                    }
+                    is TestViewState.Empty -> {
+                        Text("Hello, World!")
+                    }
+                }
             }
         }
     }
