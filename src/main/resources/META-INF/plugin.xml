@@ -14,7 +14,10 @@
        Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
        Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
   <description><![CDATA[
-    A simple MVVM template
+    A simple MVVM template which follows basic unidirectional flow with MVVM architecture.
+    This template generates the Model, ViewModel, Activity, ViewState, and ViewAction based on the model name you provide.
+
+    This template assumes you are using a multi-activity development flow and Jetpack Compose.
   ]]></description>
 
   <!-- Product and plugin compatibility requirements.
