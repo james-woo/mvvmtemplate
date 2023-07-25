@@ -35,13 +35,13 @@ class ${modelName}Activity : ComponentActivity() {
 
             Surface(
                 modifier = Modifier.fillMaxSize(),
-                color = MaterialTheme.colorScheme.background,
+                color = MaterialTheme.colors.background,
             ) {
                 when (val currentViewState = viewState) {
-                    is TestViewState.Data -> {
+                    is ${modelName}ViewState.Data -> {
                         Text("Hello, Data!")
                     }
-                    is TestViewState.Empty -> {
+                    is ${modelName}ViewState.Empty -> {
                         Text("Hello, World!")
                     }
                 }

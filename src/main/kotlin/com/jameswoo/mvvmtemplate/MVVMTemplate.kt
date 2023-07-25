@@ -8,7 +8,7 @@ val mvvmTemplate
     get() = template {
         name = "MVVM Template"
         description = "MVVM Template"
-        minApi = 23
+        minApi = 21
 
         // Conditions under which the template should be rendered in the new project wizard
         constraints = listOf(
